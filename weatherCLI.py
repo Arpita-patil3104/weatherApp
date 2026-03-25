@@ -3,10 +3,10 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-# 🔑 Replace with your OpenWeatherMap API key
+
 API_KEY = os.getenv("API_KEY")
 
-# 🌆 Predefined cities
+
 cities = [
     "Pune", "Mumbai", "Delhi", "Bangalore",
     "Hyderabad", "Chennai", "Kolkata", "Jaipur"
@@ -24,11 +24,11 @@ def display_menu():
 def get_city_choice():
     user_input = input("Enter choice: ").strip()
 
-    # Default option
+   
     if user_input == "":
         return "Pune"
 
-    # If number selected
+    
     if user_input.isdigit():
         index = int(user_input) - 1
         if 0 <= index < len(cities):
@@ -37,7 +37,7 @@ def get_city_choice():
             print("Invalid number. Defaulting to Pune.")
             return "Pune"
 
-    # Manual city input
+  
     return user_input.title()
 
 
